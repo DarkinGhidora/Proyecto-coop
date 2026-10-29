@@ -23,6 +23,6 @@ func _physics_process(_delta):
 		animacion.stop()
 		animacion.play("quieto_frente")
 		pass
-		
+		#hola soy bruno
 		
 	move_and_slide()
