@@ -15,7 +15,7 @@ var direccion_impulso: Vector2 = Vector2.ZERO
 
 
 func _physics_process(delta: float) -> void:
-	# Detectar la tecla del impulso
+	# Detectar el impulso
 	if Input.is_action_just_pressed("impulso") and not impulsando:
 		_iniciar_impulso()
 
@@ -31,50 +31,60 @@ func _physics_process(delta: float) -> void:
 		return
 
 	# Movimiento normal
+	var moviendo := false
+
 	if Input.is_action_pressed("izquierda"):
 		player.position.x -= delta * velocidad
 		direccion_mirada = Vector2.LEFT
-		animacion.play("izquierda")
+		_reproducir_animacion("izquierda")
+		moviendo = true
 
 	elif Input.is_action_pressed("derecha"):
 		player.position.x += delta * velocidad
 		direccion_mirada = Vector2.RIGHT
-		animacion.play("derecha")
+		_reproducir_animacion("derecha")
+		moviendo = true
 
 	elif Input.is_action_pressed("arriba"):
 		player.position.y -= delta * velocidad
 		direccion_mirada = Vector2.UP
-		animacion.play("arriba")
+		_reproducir_animacion("arriba")
+		moviendo = true
 
 	elif Input.is_action_pressed("abajo"):
 		player.position.y += delta * velocidad
 		direccion_mirada = Vector2.DOWN
-		animacion.play("abajo")
+		_reproducir_animacion("abajo")
+		moviendo = true
 
-	else:
-		# Si no se presiona ninguna dirección,
-		# mantener la animación de quieto correspondiente.
+	# Si no se mueve, mantener el quieto según la última dirección
+	if not moviendo:
 		_reproducir_animacion_quieto()
 
 	move_and_slide()
 
 
+func _reproducir_animacion(nombre: String) -> void:
+	# No reiniciar la animación si ya está reproduciéndose
+	if animacion.animation != nombre:
+		animacion.play(nombre)
+
+
 func _reproducir_animacion_quieto() -> void:
 	if direccion_mirada == Vector2.LEFT:
-		animacion.play("quieto_izquierda")
+		_reproducir_animacion("quieto_izquierda")
 
 	elif direccion_mirada == Vector2.RIGHT:
-		animacion.play("quieto_derecha")
+		_reproducir_animacion("quieto_derecha")
 
 	elif direccion_mirada == Vector2.UP:
-		animacion.play("quieto_espalda")
+		_reproducir_animacion("quieto_detras")
 
 	else:
-		animacion.play("quieto_frente")
+		_reproducir_animacion("quieto_frente")
 
 
 func _iniciar_impulso() -> void:
-	# Priorizar la dirección que se está presionando.
 	var direccion := Vector2.ZERO
 
 	if Input.is_action_pressed("izquierda"):

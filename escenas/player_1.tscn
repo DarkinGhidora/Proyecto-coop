@@ -52,10 +52,6 @@ region = Rect2(160, 192, 16, 16)
 atlas = ExtResource("1_11y7g")
 region = Rect2(176, 192, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mbc5p"]
-atlas = ExtResource("3_2h2o3")
-region = Rect2(0, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_re71h"]
 atlas = ExtResource("3_2h2o3")
 region = Rect2(0, 32, 16, 16)
@@ -104,10 +100,6 @@ region = Rect2(32, 0, 16, 16)
 atlas = ExtResource("3_2h2o3")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h6tat"]
-atlas = ExtResource("3_2h2o3")
-region = Rect2(0, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_o06fs"]
 atlas = ExtResource("3_2h2o3")
 region = Rect2(0, 48, 16, 16)
@@ -136,7 +128,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_buxg0")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"abajo",
 "speed": 5.0
 }, {
@@ -150,7 +142,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lq3ur")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"arriba",
 "speed": 5.0
 }, {
@@ -164,7 +156,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gf2bl")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"derecha",
 "speed": 5.0
 }, {
@@ -178,14 +170,11 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n0cnt")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"izquierda",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mbc5p")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_re71h")
 }, {
@@ -198,7 +187,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wou1c")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"quieto_derecha",
 "speed": 5.0
 }, {
@@ -215,7 +204,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k8t1j")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"quieto_detras",
 "speed": 5.0
 }, {
@@ -232,14 +221,11 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_76nnr")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"quieto_frente",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h6tat")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o06fs")
 }, {
@@ -252,7 +238,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_maw6q")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"quieto_izquierda",
 "speed": 5.0
 }]
@@ -268,7 +254,7 @@ script = ExtResource("1_41k6h")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1327313456]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_bhunq")
-animation = &"quieto_frente"
+animation = &"abajo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1352360590]
 position = Vector2(0, 7)
