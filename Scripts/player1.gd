@@ -22,7 +22,7 @@ func _physics_process(_delta):
 		animacion.play("abajo")
 	else:
 		animacion.play("quieto_frente")
-	
+		pass
 	
 
 	move_and_slide()
