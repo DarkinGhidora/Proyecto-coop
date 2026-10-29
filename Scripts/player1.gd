@@ -10,7 +10,6 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("izquierda"):
 		player.position.x -= _delta * velocidad
 		animacion.play("izquierda")
-		
 	elif Input.is_action_pressed("derecha"):
 		player.position.x += _delta * velocidad
 		animacion.play("derecha")
@@ -21,8 +20,9 @@ func _physics_process(_delta):
 		player.position.y += _delta * velocidad
 		animacion.play("abajo")
 	else:
+		animacion.stop()
 		animacion.play("quieto_frente")
 		pass
-	
-
+		
+		
 	move_and_slide()
