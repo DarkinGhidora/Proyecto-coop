@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bqrjy8pene4v3"]
+
+[ext_resource type="Script" uid="uid://cuu0xsyrd6k1h" path="res://Scripts/Murcielagos.gd" id="1_8eiqv"]
+[ext_resource type="Texture2D" uid="uid://ewg12sgvotm" path="res://tileassets/tileassets.png" id="2_p1kyi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eiqv"]
+atlas = ExtResource("2_p1kyi")
+region = Rect2(80, 256, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1kyi"]
+atlas = ExtResource("2_p1kyi")
+region = Rect2(96, 256, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ieep"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eiqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1kyi")
+}],
+"loop": 1,
+"name": &"aletea",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jv1ba"]
+size = Vector2(3, 8)
+
+[node name="Murcielagos" type="Node2D" unique_id=812348023]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=551673714]
+script = ExtResource("1_8eiqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1774413318]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_5ieep")
+animation = &"aletea"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=714578218]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_jv1ba")
+disabled = true

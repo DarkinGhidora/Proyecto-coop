@@ -54,61 +54,64 @@ region = Rect2(176, 192, 16, 16)
 [sub_resource type="SpriteFrames" id="SpriteFrames_bhunq"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.55,
 "texture": SubResource("AtlasTexture_bxx23")
 }, {
-"duration": 1.0,
+"duration": 0.55,
 "texture": SubResource("AtlasTexture_qh3su")
 }, {
-"duration": 1.0,
+"duration": 0.55,
 "texture": SubResource("AtlasTexture_buxg0")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"abajo",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.55,
 "texture": SubResource("AtlasTexture_6736r")
 }, {
-"duration": 1.0,
+"duration": 0.55,
 "texture": SubResource("AtlasTexture_i66ns")
 }, {
-"duration": 1.0,
+"duration": 0.55,
 "texture": SubResource("AtlasTexture_lq3ur")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"arriba",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.55,
 "texture": SubResource("AtlasTexture_txlgs")
 }, {
-"duration": 1.0,
+"duration": 0.55,
 "texture": SubResource("AtlasTexture_dkxmd")
 }, {
-"duration": 1.0,
+"duration": 0.55,
 "texture": SubResource("AtlasTexture_gf2bl")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"derecha",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.55,
 "texture": SubResource("AtlasTexture_72vom")
 }, {
-"duration": 1.0,
+"duration": 0.55,
 "texture": SubResource("AtlasTexture_ugj0w")
 }, {
-"duration": 1.0,
+"duration": 0.55,
 "texture": SubResource("AtlasTexture_n0cnt")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"izquierda",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5voh1"]
+size = Vector2(12, 3)
 
 [node name="player1" type="Node2D" unique_id=1950890555]
 
@@ -121,5 +124,8 @@ sprite_frames = SubResource("SpriteFrames_bhunq")
 animation = &"abajo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1352360590]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_5voh1")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1106943543]
+zoom = Vector2(3, 3)
