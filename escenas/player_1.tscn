@@ -257,17 +257,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h2o3"]
+size = Vector2(12, 2)
+
 [node name="player1" type="Node2D" unique_id=1950890555]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1301094617]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1301094617 groups=["player"]]
 script = ExtResource("1_41k6h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1327313456]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_bhunq")
-animation = &"izquierda"
+animation = &"quieto_frente"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1352360590]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_2h2o3")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1106943543]
 zoom = Vector2(3, 3)

@@ -28,6 +28,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jv1ba"]
 size = Vector2(3, 8)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jv1ba"]
+radius = 71.46406
+
 [node name="Murcielagos" type="Node2D" unique_id=812348023]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=551673714]
@@ -42,3 +45,10 @@ animation = &"aletea"
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_jv1ba")
 disabled = true
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1944160518]
+scale = Vector2(0.55961084, 0.55961084)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=373214468]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_jv1ba")
