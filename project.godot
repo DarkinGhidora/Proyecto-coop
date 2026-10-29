@@ -25,6 +25,10 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/team_create/plugin.cfg")
 
+[global_group]
+
+player=""
+
 [input]
 
 derecha={
