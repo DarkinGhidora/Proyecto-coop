@@ -268,7 +268,7 @@ script = ExtResource("1_41k6h")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1327313456]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_bhunq")
-animation = &"izquierda"
+animation = &"quieto_frente"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1352360590]
 position = Vector2(0, 7)
